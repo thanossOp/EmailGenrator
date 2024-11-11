@@ -1,110 +1,141 @@
 # Email Generator
 
-This project is an **Email Generator** that allows you to create personalized email templates for various situations such as leave requests, meetings, and more. You can add new templates, modify existing ones, and generate emails by providing necessary field inputs.
+This project provides an interactive tool to generate customized emails based on templates. The user can add new templates, variations, and generate emails with placeholders that can be replaced by user input.
 
 ## Features
+- **Add new email templates**: Create custom email templates with subject lines, body content, and required fields.
+- **Generate emails**: Based on the available templates, generate emails with the required information.
+- **Add variations to templates**: Add new variations to existing email templates.
+- **Template with placeholders**: Use placeholders (variables) within the template to dynamically replace with user input.
+- **Save and load templates**: Templates are saved in a JSON file, which can be loaded when the program starts.
 
-- Generate emails from pre-defined templates
-- Add new email templates interactively
-- Add variations to existing email templates
-- Save and load email templates from a JSON file
-- Easy-to-use CLI interface
+## Usage
 
-## Prerequisites
+### Running the Application
 
-Make sure you have Python 3.x installed on your system.
-
-You can download Python from [here](https://www.python.org/downloads/).
-
-## Setup Instructions
-
-1. **Clone the Repository**
-
-   Clone this repository to your local machine using Git.
-
+1. Clone this repository to your local machine.
+2. Make sure Python 3.x is installed on your system.
+3. Install the necessary dependencies using:
    ```bash
-   git clone https://github.com/your-username/email-generator.git
-   cd email-generator
-Install Dependencies
-
-No external dependencies are required for this project as it uses Python’s built-in libraries.
-
-Running the Application
-Navigate to the Project Folder
-
-Open a terminal (or command prompt) and navigate to the project folder.
-
-bash
-cd email-generator
-Run the Application
-
-Run the application using the following command:
-
+   pip install -r requirements.txt
+Run the application using:
 bash
 python app.py
-This will launch the Email Generator application and display the main menu.
+Main Menu Options
+The application presents the following menu options:
 
-How to Use
-Generate Email
+Generate email: Choose an email template and provide the required information to generate an email.
+Add new template type: Add a new template to the system.
+Add template variation: Add a new variation (body) to an existing template.
+Exit: Exit the application.
+Example: Using Template Variables
+When creating templates, you can use placeholders (variables) inside both the subject and body of the email. Placeholders are defined using curly braces {}, for example, {place}, {start_date}, {manager_name}.
 
-From the menu, select 1. Generate email.
-Choose the template you want to generate from the available options.
-Enter the required fields when prompted.
-The generated email will be displayed in the console.
-Add a New Template Type
+Example template:
 
-Select 2. Add new template type from the menu.
-Provide a name for the template type.
-Enter subject lines, required fields, and the body template.
-The new template will be saved in email_templates.json.
-Add Template Variation
+Subject: "Going to {place} - Trip Notification"
+Body:
+css
+Hello {manager_name},
 
-Select 3. Add template variation from the menu.
-Choose the template to which you want to add a variation.
-Enter the new body template for the variation.
-The variation will be added to the selected template.
-Exit
+I wanted to keep you updated on my upcoming trip to {place}.
+- Trip Location: {place}
+- Start Date: {start_date}
+- End Date: {end_date}
 
-Select 4. Exit to quit the application.
-File Structure
-bash
-email-generator/
-├── app.py               # Main application script
-├── trainModel.py        # Email Generator class and logic
-├── email_templates.json # Stores email templates in JSON format
-├── README.md            # Project documentation
-Customizing the Templates
-You can customize the templates and subject lines in the email_templates.json file. The format for the templates is as follows:
+Best regards,
+{sender_name}
+Required Fields
+Each template can define a list of required fields. These fields are placeholders in the template that need to be filled by the user when generating an email. For the example above, the required fields would be:
 
-json
-{
-  "leave_for_trip": {
-    "subjects": [
-      "Going to {place} - Trip Notification",
-      "Traveling to {place} - {start_date} to {end_date}"
-    ],
-    "required_fields": [
-      "place",
-      "start_date",
-      "end_date",
-      "sender_name",
-      "manager_name"
-    ],
-    "templates": [
-      "Hello {manager_name},\n\nI wanted to keep you updated on my upcoming trip to {place}.\n\n- **Trip Location**: {place}\n- **Start Date**: {start_date}\n- **End Date**: {end_date}\n\nI’ve organized my responsibilities and briefed the team to ensure there’s no disruption. If you need to reach me during this period, feel free to let me know.\n\nLooking forward to sharing more updates upon my return.\n\nBest regards,\n{sender_name}",
-      "Hi {manager_name},\n\nI just wanted to let you know that I’ll be heading to {place} from {start_date} to {end_date}. I’ve taken care of ongoing tasks and coordinated with the team to make sure everything runs smoothly while I’m away.\n\nPlease don’t hesitate to reach out if you need anything in the meantime!\n\nThanks,\n{sender_name}"
-    ]
-  }
-}
-subjects: A list of subject lines with placeholders for dynamic fields.
-required_fields: A list of fields that need to be provided by the user (e.g., place, start_date, end_date).
-templates: A list of email body templates with placeholders for dynamic fields.
-Contributing
-Feel free to fork this repository and submit pull requests for new features or bug fixes. Please make sure to follow the existing code style and add tests for new features.
+place
+start_date
+end_date
+sender_name
+manager_name
+Template Example
+Adding a Template:
+Template Name: leave_for_trip
+Subject Line(s):
+"Going to {place} - Trip Notification"
+"Traveling to {place} - {start_date} to {end_date}"
+"Upcoming Trip to {place} - {start_date} to {end_date}"
+Body:
+vbnet
+Hello {manager_name},
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+I wanted to keep you updated on my upcoming trip to {place}.
+- **Trip Location**: {place}
+- **Start Date**: {start_date}
+- **End Date**: {end_date}
+
+Looking forward to sharing more updates upon my return.
+
+Best regards,
+{sender_name}
+Generating an Email:
+When generating the email using the leave_for_trip template, the user will be prompted to provide values for the required fields like place, start_date, end_date, sender_name, and manager_name.
+
+For example:
+
+place = Ayodhya
+start_date = 27/12/2024
+end_date = 04/01/2025
+sender_name = Nisarg
+manager_name = Yash
+This would generate an email like:
+
+Subject: "Traveling to Ayodhya - 27/12/2024 to 04/01/2025"
+
+Body:
 
 vbnet
+Hello Yash,
 
-This `README.md` provides a detailed explanation of how to use the email generator, add new templ
+I wanted to keep you updated on my upcoming trip to Ayodhya.
+- **Trip Location**: Ayodhya
+- **Start Date**: 27/12/2024
+- **End Date**: 04/01/2025
+
+Looking forward to sharing more updates upon my return.
+
+Best regards,
+Nisarg
+Template Types
+Some example template types included in the project:
+
+sick_leave
+performance_review
+vacation_leave
+meeting_invitation
+resignation_letter
+work_from_home
+wedding_leave
+leave_for_trip (new template added in this example)
+Adding New Templates
+To add a new template type, the program prompts you for the following details:
+
+Template name: A unique identifier for the template.
+Subject lines: Multiple subject options for the email.
+Required fields: Variables used in the email (e.g., {place}, {manager_name}).
+Email body template: The body of the email where placeholders can be used.
+After entering all the information, the new template is saved in a JSON file and can be used for generating emails.
+
+Adding Variations to Templates
+You can add variations (alternate body templates) to existing templates. The process is similar to adding a new template, but only the body is modified.
+
+File Structure
+bash
+.
+├── app.py               # Main application file
+├── trainModel.py        # Email Generator Logic
+├── email_templates.json # Stores email templates in JSON format
+├── requirements.txt     # List of dependencies
+└── README.md            # This file
+License
+This project is open-source and available under the MIT License.
+
+perl
+
+
+This `README.md` file provides an overview of your email generation system, instructions for use, and examples for template creation, including how to use variables for dynamic email generation.
