@@ -15,11 +15,12 @@ This project provides an interactive tool to generate customized emails based on
 
 1. Clone this repository to your local machine.
 2. Make sure Python 3.x is installed on your system.
-3. Install the necessary dependencies using:
-   ```bash
-   pip install -r requirements.txt
+3. Install Dependencies
+
+No external dependencies are required for this project as it uses Python’s built-in libraries.
+
 Run the application using:
-bash
+
 python app.py
 Main Menu Options
 The application presents the following menu options:
