@@ -1,0 +1,161 @@
+{
+  "sick_leave": {
+    "subjects": [
+      "Sick Leave Request - {date}",
+      "Unable to attend work today - {date}",
+      "Taking sick leave - {date}",
+      "Medical Leave Notification - {date}",
+      "Health Leave Request - {date}"
+    ],
+    "required_fields": [
+      "date",
+      "sender_name",
+      "manager_name"
+    ],
+    "templates": [
+      "Dear {manager_name},\n\nI'm feeling under the weather with {symptom}. Due to my condition, I will not be able to come to work today.\n\nI expect to return to work on {return_date}.\n\nBest regards,\n{sender_name}",
+      "Dear {manager_name},\n\nI regret to inform you that I am suffering from {symptom} and need to take a sick leave today. I have consulted a doctor and been advised to rest.\n\nI will resume work on {return_date}. I have informed my team about any urgent tasks.\n\nRegards,\n{sender_name}",
+      "Dear {manager_name},\n\nDue to {symptom}, I will not be able to come to office today. I have already updated my team regarding pending work.\n\nI should be back by {return_date}.\n\nThank you for your understanding.\n\nBest regards,\n{sender_name}"
+    ],
+    "symptoms": [
+      "a fever and headache",
+      "flu-like symptoms",
+      "a severe cold",
+      "a migraine",
+      "food poisoning",
+      "seasonal allergies",
+      "body ache",
+      "viral infection"
+    ]
+  },
+  "performance_review": {
+    "subjects": [
+      "Performance Review Feedback - {employee}",
+      "Quarterly Performance Assessment - {employee}",
+      "Performance Evaluation Summary - {employee}",
+      "Annual Performance Review - {employee}",
+      "Performance Appraisal Results - {employee}"
+    ],
+    "required_fields": [
+      "employee",
+      "reviewer",
+      "period",
+      "strengths",
+      "improvements",
+      "rating"
+    ],
+    "templates": [
+      "Dear {employee},\n\nI hope this email finds you well. I'm writing to provide feedback on your performance for {period}.\n\nKey Strengths:\n{strengths}\n\nAreas for Development:\n{improvements}\n\nOverall Performance Rating: {rating}\n\nI would like to schedule a meeting to discuss this feedback in detail.\n\nBest regards,\n{reviewer}",
+      "Dear {employee},\n\nFollowing our recent performance review discussion for {period}, here is a summary of our assessment:\n\nStrengths Demonstrated:\n{strengths}\n\nGrowth Opportunities:\n{improvements}\n\nPerformance Rating: {rating}\n\nLet's schedule a follow-up meeting to discuss your development plan.\n\nRegards,\n{reviewer}"
+    ]
+  },
+  "vacation_leave": {
+    "subjects": [
+      "Vacation Leave Request - {date_range}",
+      "Annual Leave Application - {date_range}",
+      "Time Off Request - {date_range}",
+      "Leave Application - {date_range}"
+    ],
+    "required_fields": [
+      "manager_name",
+      "sender_name",
+      "start_date",
+      "end_date",
+      "return_date",
+      "reason"
+    ],
+    "templates": [
+      "Dear {manager_name},\n\nI would like to request vacation leave from {start_date} to {end_date} for {reason}.\n\nI will ensure all pending tasks are completed before my leave and will delegate any ongoing responsibilities. I will return to office on {return_date}.\n\nBest regards,\n{sender_name}",
+      "Dear {manager_name},\n\nI am writing to request annual leave from {start_date} to {end_date}. The purpose of my leave is {reason}.\n\nI have prepared a handover document and briefed my team about ongoing projects. I will resume work on {return_date}.\n\nThank you for your consideration.\n\nRegards,\n{sender_name}"
+    ]
+  },
+  "meeting_invitation": {
+    "subjects": [
+      "Meeting Invitation: {topic}",
+      "Team Meeting - {topic}",
+      "Project Sync: {topic}",
+      "Discussion on {topic}"
+    ],
+    "required_fields": [
+      "recipient_name",
+      "sender_name",
+      "topic",
+      "date",
+      "time",
+      "location",
+      "agenda"
+    ],
+    "templates": [
+      "Dear {recipient_name},\n\nI would like to schedule a meeting to discuss {topic}.\n\nDate: {date}\nTime: {time}\nLocation: {location}\n\nAgenda:\n{agenda}\n\nPlease confirm your availability.\n\nBest regards,\n{sender_name}",
+      "Hi {recipient_name},\n\nLet's meet to discuss {topic}.\n\nDetails:\n- Date: {date}\n- Time: {time}\n- Venue: {location}\n\nAgenda Points:\n{agenda}\n\nKindly let me know if this works for you.\n\nRegards,\n{sender_name}"
+    ]
+  },
+  "resignation_letter": {
+    "subjects": [
+      "Resignation Letter - {notice_period} Notice",
+      "Formal Resignation",
+      "Notice of Resignation",
+      "Intent to Resign - {notice_period} Notice"
+    ],
+    "required_fields": [
+      "manager_name",
+      "sender_name",
+      "last_working_date",
+      "notice_period",
+      "reason"
+    ],
+    "templates": [
+      "Dear {manager_name},\n\nI am writing to formally resign from my position, effective {last_working_date}. As per my contract, I am providing {notice_period} notice.\n\n{reason}\n\nI will ensure a smooth handover of all my responsibilities and documentation during my notice period.\n\nThank you for the opportunities for growth and development during my time here.\n\nBest regards,\n{sender_name}",
+      "Dear {manager_name},\n\nWith this letter, I would like to announce my resignation effective {last_working_date}. I am providing {notice_period} notice as required.\n\n{reason}\n\nI am committed to ensuring a seamless transition of my duties before my departure.\n\nI appreciate all the support and opportunities I have received.\n\nSincerely,\n{sender_name}"
+    ]
+  },
+  "work_from_home": {
+    "subjects": [
+      "Work From Home Request - {date}",
+      "Remote Work Request - {date}",
+      "WFH Notification - {date}"
+    ],
+    "required_fields": [
+      "manager_name",
+      "sender_name",
+      "date",
+      "reason"
+    ],
+    "templates": [
+      "Dear {manager_name},\n\nI am writing to request permission to work from home on {date} due to {reason}.\n\nI will be available on my phone and email during regular working hours and will attend all scheduled meetings virtually.\n\nBest regards,\n{sender_name}",
+      "Dear {manager_name},\n\nI would like to work remotely on {date} as {reason}.\n\nI will ensure all my deliverables are met and maintain regular communication with the team. I will be fully available during business hours.\n\nThank you for your consideration.\n\nRegards,\n{sender_name}"
+    ]
+  },
+  "wedding_leave": {
+    "subjects": [
+      "Sisters Wedding: {field}",
+      "Brothers wedding: {field}"
+    ],
+    "required_fields": [
+      "startdate",
+      "end date",
+      "reason"
+    ],
+    "templates": [
+      "Dear {recipient_name},\n\nWe are thrilled to invite you to celebrate the wedding of {bride_name} and {groom_name}.\n\nDate: {wedding_date}\nTime: {wedding_time}\nLocation: {venue_name}, {venue_address}\n\nJoin us as we exchange our vows and celebrate this beautiful journey together. Your presence would mean the world to us.\n\nPlease let us know if you will be able to join us for this joyous occasion.\n\nWarm regards,\n{sender_name}\n\nDear {recipient_name},\n\nWe are excited to invite you to our destination wedding as we embark on the adventure of a lifetime together! Please join us for the wedding of {bride_name} and {groom_name}.\n\nDate: {wedding_date}\nTime: {wedding_time}\nLocation: {destination_venue}, {destination_city}\n\nCelebrate with us in {destination_city} as we say \"I do\" surrounded by our closest family and friends. After the ceremony, join us for a reception filled with music, dancing, and unforgettable memories.\n\nKindly RSVP by {RSVP_date}.\n\nWith love,\n{sender_name}\n\nDear {recipient_name},\n\nIt would bring us so much joy to have you with us as we tie the knot! {bride_name} and {groom_name} are getting married, and we\u2019d love for you to join the celebration.\n\nDate: {wedding_date}\nTime: {wedding_time}\nLocation: {ceremony_location}, followed by a reception at {reception_location}\n\nWe\u2019re keeping it simple and meaningful, surrounded by the ones we love most. There will be food, drinks, laughter, and dancing!\n\nPlease RSVP by {RSVP_date} to let us know if you\u2019ll be there to share this special day with us.\n\nWith love,\n{sender_name}\n",
+      ""
+    ]
+  },
+  "leave_for_trip": {
+    "subjects": [
+      "Going to {place} - Trip Notification",
+      "Traveling to {place} - {start_date} to {end_date}",
+      "Upcoming Trip to {place} - {start_date} to {end_date}"
+    ],
+    "required_fields": [
+      "place",
+      "start_date",
+      "end_date",
+      "sender_name",
+      "manager_name"
+    ],
+    "templates": [
+      "Hello {manager_name},\n\nI wanted to keep you updated on my upcoming trip to {place}.\n\n- **Trip Location**: {place}\n- **Start Date**: {start_date}\n- **End Date**: {end_date}\n\nI\u2019ve organized my responsibilities and briefed the team to ensure there\u2019s no disruption. If you need to reach me during this period, feel free to let me know.\n\nLooking forward to sharing more updates upon my return.\n\nBest regards,\n{sender_name}\n\nHi {manager_name},\n\nI just wanted to let you know that I\u2019ll be heading to {place} from {start_date} to {end_date}. I\u2019ve taken care of ongoing tasks and coordinated with the team to make sure everything runs smoothly while I\u2019m away.\n\nPlease don\u2019t hesitate to reach out if you need anything in the meantime!\n\nThanks,\n{sender_name}\n\nDear {manager_name},\n\nI am writing to inform you of my upcoming trip to {place}.\n\nStart Date: {start_date}\nEnd Date: {end_date}\n\nDuring this time, I will make sure that all tasks are managed and handover procedures are in place to ensure continuity in my absence. Please feel free to reach out to me if there\u2019s anything specific you would like me to address before I leave.\n\nThank you for your understanding.\n\nBest regards,\n{sender_name}\n"
+    ]
+  }
+}
